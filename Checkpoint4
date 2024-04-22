@@ -1,0 +1,21 @@
+CREATE TABLE clients (
+    customer_id INT PRIMARY KEY NOT NULL,
+    nom VARCHAR(n) NOT NULL,
+    adresse VARCHAR(m) NOT NULL
+);
+
+CREATE TABLE produits (
+    product_id INT PRIMARY KEY NOT NULL,
+    nom VARCHAR NOT NULL,
+    prix DECIMAL NOT NULL CHECK (prix > 0)
+);
+
+CREATE TABLE commandes (
+    order_id INT PRIMARY KEY NOT NULL,
+    customer_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantite INT NOT NULL,
+    date_de_commande DATE NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES clients(customer_id),
+    FOREIGN KEY (product_id) REFERENCES produits(product_id)
+);
