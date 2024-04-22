@@ -1,0 +1,14 @@
+INSERT INTO clients (nom, adresse) VALUES
+('Ahmed', 'Tunisie'),
+('Coulibaly', 'Sénégal'),
+('Hasan', 'Egypte');
+INSERT INTO produits (nom, prix) VALUES
+('Cookies', 10),
+('Candy', 5.2);
+INSERT INTO commandes (customer_id, product_id, quantite, date_de_commande) VALUES
+(1, 2, 3, '2023-01-22'),
+(2, 1, 10, '2023-04-14');
+UPDATE commandes SET quantite = 6 WHERE order_id = 2;
+DELETE FROM clients WHERE customer_id = 3;
+DELETE FROM commandes;
+DROP TABLE commandes;
